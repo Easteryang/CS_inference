@@ -30,6 +30,6 @@ Among them, <br>
 >* See the annotations in the script for input and output details.
 
 
-### 5. To make a basic run, please execute a simple `run.m` as (just for an example): <br>
-```matlab
-ridge_experimrnt(input, inputphi, outdir, core)
+### 5. To make a basic run, please execute a simple `*run.m*` as (just for an example): <br>
+```Matlab
+ridge_experiment(input, inputphi, outdir, core)
