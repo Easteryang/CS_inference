@@ -14,10 +14,10 @@ Among them, <br>
 ### 3. /computer_simulation contains scripts used in computer simulation experiments.<br>
 Among them, <br>
 * l1eq_ridge_comparison.m is the main function script to be executed, and its calculation process is:<br>
->Step1:  Randomly generate a measurement matrix, and get the corresponding observation matrix;<br>
->Step2:  Use the two regression models to execute the compressed sensing algorithm to obtain the inferred recover matrix (some other parameters can be set here); <br>
->Step3:  Calculate the Pearson correlation between the obtained recover matrix and the original singe cell expression matrix, and calculate the average/median/SIR value, and put the results of the two methods in one data matrix.<br>
->(The implementation of step2 requires l1eq_simulation_full.m and ridge_simulation_full.m scripts.)<br>
+>* Step1:  Randomly generate a measurement matrix, and get the corresponding observation matrix;<br>
+>* Step2:  Use the two regression models to execute the compressed sensing algorithm to obtain the inferred recover matrix (some other parameters can be set here); <br>
+>* Step3:  Calculate the Pearson correlation between the obtained recover matrix and the original singe cell expression matrix, and calculate the average/median/SIR value, and put the results of the two methods in one data matrix.<br>
+>* (The implementation of step2 requires l1eq_simulation_full.m and ridge_simulation_full.m scripts.)<br>
 >* See the annotations in the script for input and output details.<br>
 * For the inference of a large data set, divide the original matrix into several subfiles first and then execute the first 20 lines of the ridge_simulation_full.m script for restoration.
 
