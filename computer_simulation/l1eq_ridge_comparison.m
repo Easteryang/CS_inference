@@ -3,7 +3,7 @@ function l1eq_ridge_comparison(input, pool_range, tur, lambda_l2, repeat, outdir
 
 %{
     input:
-		   input: directory and the name of the input table, header = TRUE, row = sample, column = gene, for example: input = '/home/singlecell/dataset1.txt'
+	   input: directory and the name of the input table, header = TRUE, row = sample, column = gene, for example: input = '/home/singlecell/dataset1.txt'
            pool_range: the range of pool, e.g. pool_range = [10:40] or [15,20,25,30,35,40,45]
            tur: turbulance, e.g. tur = 0.2
            lambda_l2: the tradeoff parameter for Ridge regression-based method,basically, it is proportional to the invese of the variance, e.g. 10^(-2) 
