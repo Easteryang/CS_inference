@@ -3,7 +3,7 @@ function l1eq_experiment(input,inputphi,outdir, core)
 
 %{
     input:
-		   input: directory and the name of the input table, header = FALSE, row = gene, column = pool, for example: input = '/home/singlecell/experiment.txt'
+	   input: directory and the name of the input table, header = FALSE, row = gene, column = pool, for example: input = '/home/singlecell/experiment.txt'
            inputphi: normalized measurement matrix, row = pool, column = sample, for example: inputphi = '/home/singlecell/phi_normalization.mat'
            outdir: the directory of output
            core: core used during calculation
