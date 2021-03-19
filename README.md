@@ -29,3 +29,7 @@ Among them, <br>
 >The two functions’ calculation process is: through the provided pool expression matrix and the normalized measurement matrix, use the corresponding regression model to execute the compressed sensing algorithm and infer the original single cell expression matrix.<br>
 >* See the annotations in the script for input and output details.
 
+
+### 5. To make a basic run, please execute a simple `run.m` as (just for an example): <br>
+```matlab
+ridge_experimrnt(input, inputphi, outdir, core)
