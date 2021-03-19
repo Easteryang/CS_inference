@@ -1,5 +1,5 @@
 # CS_inference
-## To use our scripts, please read the README documentation first.
+## To use our scripts, please read README first.
 
 ### 1. CS_inference provides all the Matlab scripts and some example files that use compressed sensing algorithms to infer the original singe cell expression matrix in this article.
 
