@@ -51,6 +51,8 @@ p.IdleTimeout = 100000000;
     
       col = col+1;
       phi = randi([0,1],pool,cell);
+      % If you want to control the probability of occurrence of 1, please add and adjust the parameter p, p = (0,1)
+      % phi = double(rand(pool,cell)<=p); 
       e = unifrnd(1-tur,1+tur,pool,cell);
       ephi = e.*phi;     
       
