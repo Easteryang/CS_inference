@@ -19,7 +19,7 @@ Among them, <br>
 >* Step3:  Calculate the Pearson correlation between the obtained recover matrix and the original singe cell expression matrix, and calculate the average/median/SIR value, and put the results of the two methods in one data matrix.<br>
 >* (The implementation of step2 requires `l1eq_simulation_full.m` and `ridge_simulation_full.m` scripts.)<br>
 >* See the annotations in the script for input and output details.<br>
-* For the inference of a large data set, divide the original matrix into several subfiles first and then execute the first 20 lines of the `ridge_simulation_full.m` script for restoration.
+* For the inference of a large-scale data set, use `parallel.m` to divide the original matrix into several sub-blocks first and then conduct the restoration (need `ridge_simulation_full.m` script).
 
 ### 4. /experiment_inference contains the scripts and a sample file used in the in vitro experiment.<br>
 Among them, <br>
