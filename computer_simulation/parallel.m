@@ -3,16 +3,19 @@ function l1eq_ridge_comparison(input, blockSize, ratio, outdir, core)
 
 %{
     input:
-	    input: directory and the name of the input table, header = TRUE, row = sample, column = gene, for example: input = '/home/singlecell/big_dataset.txt'
-	    blockSize: the number of cells per block, for example: 500
-	    ratio: the number of pools per block / the number of cells per block, belongs to the range of (0,1), for example: 0.5
-	    outdir: the directory of output
+        input: directory and the name of the input table, header = TRUE, row = sample, column = gene, for example: input = '/home/singlecell/big_dataset.txt'
+        blockSize: the number of cells per block, for example: 500
+        ratio: the number of pools per block / the number of cells per block, belongs to the range of (0,1), for example: 0.5
+        outdir: the directory of output
         core: core used during calculation
-		   
-	output: 
-           Several data matrices include:
-	       A recoverdatamat, a correlationdatamat
-%}
+    
+    output: 
+        Several data matrices include:
+        A recoverdatamat, a correlationdatamat
+    
+    require:
+        ridge_simulation.m: the first 20 lines of the ridge_simulation_full.m script, return recoverX
+  %}
 
 cellData=importdata(input);
 addpath(genpath('/path that contains ridge_simulation.m'));
