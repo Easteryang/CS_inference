@@ -1,4 +1,4 @@
-function l1eq_ridge_comparison(input, blockSize, ratio, outdir, core)
+function l1eq_ridge_comparison(input, blockSize, ratio, lambda_l2, outdir, core)
 %on server
 
 %{
@@ -6,6 +6,7 @@ function l1eq_ridge_comparison(input, blockSize, ratio, outdir, core)
         input: directory and the name of the input table, header = TRUE, row = sample, column = gene, for example: input = '/home/singlecell/big_dataset.txt'
         blockSize: the number of cells per block, for example: 500
         ratio: the number of pools per block / the number of cells per block, belongs to the range of (0,1), for example: 0.5
+	lambda_l2: the tradeoff parameter for Ridge regression-based method,basically, it is proportional to the invese of the variance, e.g. 10^(-2) 
         outdir: the directory of output
         core: core used during calculation
     
@@ -14,7 +15,8 @@ function l1eq_ridge_comparison(input, blockSize, ratio, outdir, core)
         A recoverdatamat, a correlationdatamat
     
     require:
-        ridge_simulation.m: the first 20 lines of the ridge_simulation_full.m script, return recoverX
+        ridge_simulation.m: the first 20 lines of the ridge_simulation_full.m script; 
+	remove parameter ephi, phi (phi = double(rand(pool,cell)<=p); add parameter core (p = parpool(core); p.IdleTimeout = 100000000), pool; and return recoverX
   %}
 
 cellData=importdata(input);
@@ -38,7 +40,7 @@ if ( remainSize > 0 )
 	curData = cellData( : , (blockNum*blockSize+1):size(cellData,2) );
 	poolSize = floor(remainSize*ratio);
 	pool = poolSize
-	Rarray{i} = ridge_simulation(curData, pool, core);
+	Rarray{i} = ridge_simulation(curData, pool, lambda_l2, core);
 	% disp(i);
 	% disp('Done!');
 end
