@@ -16,7 +16,7 @@ function l1eq_ridge_comparison(input, blockSize, ratio, lambda_l2, outdir, core)
     
     require:
         ridge_simulation.m: the first 20 lines of the ridge_simulation_full.m script; 
-	remove parameter ephi, phi (phi = double(rand(pool,cell)<=p); add parameter core (p = parpool(core); p.IdleTimeout = 100000000), pool; and return recoverX
+	remove parameter ephi, phi (phi = double(rand(pool,size(X,1))<=p); add parameter core (p = parpool(core); p.IdleTimeout = 100000000), pool; and return recoverX
   %}
 
 cellData=importdata(input);
